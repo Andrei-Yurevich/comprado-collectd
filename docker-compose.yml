@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  collectd_test:
+    container_name: collectd_test
+    hostname: collectd_test 
+    build:
+      context: ./collectd
+      dockerfile: Dockerfile
+    privileged: true
+    network_mode: host
+    volumes:
+      - /proc:/mnt/proc:ro
